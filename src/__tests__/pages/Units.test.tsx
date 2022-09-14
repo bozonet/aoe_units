@@ -41,7 +41,7 @@ describe("Units", () => {
 
     //when table is rendered, it should have 5 columns
     const tableColumns = screen.getAllByRole("columnheader");
-    expect(tableColumns.length).toBe(5);
+    expect(tableColumns.length).toBe(4);
 
 
     });

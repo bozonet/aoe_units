@@ -1,13 +1,9 @@
 import {
-  FETCH_UNIT_REQUEST,
   FETCH_ALL_UNITS_REQUEST,
   FETCH_ALL_UNITS_SUCCESS,
   GET_UNIT_REQUEST,
   GET_UNIT_SUCCESS,
-  FETCH_TODO_FAILURE,
-  FETCH_UNIT_SUCCESS,
-  FILTER_BY_AGE_REQUEST,
-  FILTER_BY_AGE_SUCCESS,
+  FETCH_FAILURE,
   FILTER_BY_FILTERS_REQUEST,
   FILTER_BY_FILTERS_SUCCESS
 } from "./actionTypes";
@@ -61,13 +57,6 @@ export interface FilterState {
   };
 }
 
-export interface FilterByAgeRequestPayload {
-  ageFilter: string;
-}
-
-export interface FilterByAgeSuccessPayload {
-  ageFilter: string;
-}
 
 export interface FilterByFiltersRequest {
   type: typeof FILTER_BY_FILTERS_REQUEST;
@@ -135,36 +124,18 @@ export interface FetchAllUnitsSuccess {
   payload: FetchAllUnitsSuccessPayload;
 }
 
-export interface FetchTodoFailurePayload {
+export interface FetchFailurePayload {
   error: string;
 }
 export interface FetchAllUnitsRequest {
   type: typeof FETCH_ALL_UNITS_REQUEST;
 }
 
-export interface FilterByAgeRequest {
-  type: typeof FILTER_BY_AGE_REQUEST;
-  payload: FilterByAgeRequestPayload;
-}
 
-export interface FilterByAgeSuccess {
-  type: typeof FILTER_BY_AGE_SUCCESS;
-  payload: FilterByAgeSuccessPayload;
-}
 
-export interface FetchUnitRequest {
-  payload: any;
-  type: typeof FETCH_UNIT_REQUEST;
-}
-
-export type FetchUnitSuccess = {
-  type: typeof FETCH_UNIT_SUCCESS;
-  payload: FetchUnitSuccessPayload;
-};
-
-export type FetchTodoFailure = {
-  type: typeof FETCH_TODO_FAILURE;
-  payload: FetchTodoFailurePayload;
+export type FetchFailure = {
+  type: typeof FETCH_FAILURE;
+  payload: FetchFailurePayload;
 };
 
 export type FilterActions =
@@ -172,10 +143,6 @@ export type FilterActions =
   | FetchAllUnitsSuccess
   | GetUnitRequest
   | GetUnitSuccess
-  | FilterByAgeRequest
-  | FilterByAgeSuccess
   | FilterByFiltersRequest
   | FilterByFiltersSuccess
-  | FetchUnitRequest
-  | FetchUnitSuccess
-  | FetchTodoFailure;
+  | FetchFailure;

@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, RangeSlider, Paper, SegmentedControl, Checkbox } from '@mantine/core';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { filterByFiltersRequest } from '../store/filter/actions';
+import styles from '../styles/Filter.module.scss';
 
 type FiltersProps = {
     pageTitle?: string;
@@ -21,8 +22,11 @@ const Filters: React.FC<FiltersProps> = () => {
 
     return (
         <Container
+        size="xl"
+       
         >
-            <Paper shadow="sm" style={{ margin: "0 20px 0 20px", padding: "5px 20px 20px 20px" }}>
+            <Paper shadow="sm" className={styles.paper}>
+       
                 <h2> Ages</h2>
                 <SegmentedControl
                     data={[
@@ -38,7 +42,11 @@ const Filters: React.FC<FiltersProps> = () => {
                     }
                     fullWidth
                     disabled={loading ? true : false}
-                    className="age-filter"
+                    sx={{
+                        flexWrap: 'wrap',
+                    }}
+
+                   
                 />    <h2> Costs</h2>
 
                 <Checkbox label="Wood"

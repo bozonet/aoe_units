@@ -23,7 +23,7 @@ describe("Filtered Units Table", () => {
 
     //when table is rendered, it should have 4 columns
     const tableColumns = screen.getAllByRole("columnheader");
-    expect(tableColumns.length).toBe(5);
+    expect(tableColumns.length).toBe(4);
 
     //when table is rendered, it should have 105 rows with headings
     const tableRows = screen.getAllByRole("row");

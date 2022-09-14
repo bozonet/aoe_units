@@ -1,10 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 import {
-  FETCH_UNIT_REQUEST,
   FILTER_BY_FILTERS_REQUEST,
   FILTER_BY_FILTERS_SUCCESS,
-  FETCH_UNIT_SUCCESS,
-  FETCH_TODO_FAILURE,
+  FETCH_FAILURE,
   FETCH_ALL_UNITS_REQUEST,
   FETCH_ALL_UNITS_SUCCESS,
   GET_UNIT_REQUEST,
@@ -68,18 +66,6 @@ export default (state = initialState, action: FilterActions) => {
         ageFilter: action.payload.ageFilter,
         pending: false,
       };
-    case FETCH_UNIT_REQUEST:
-      return {
-        ...state,
-        pending: true,
-      };
-    case FETCH_UNIT_SUCCESS:
-      return {
-        ...state,
-        pending: false,
-        filteredUnits: action.payload.units,
-        error: null,
-      };
       case FETCH_ALL_UNITS_SUCCESS:
         return {
           ...state,
@@ -88,7 +74,7 @@ export default (state = initialState, action: FilterActions) => {
           filteredUnits: action.payload.units,
           error: null,
         };
-    case FETCH_TODO_FAILURE:
+    case FETCH_FAILURE:
       return {
         ...state,
         pending: false,

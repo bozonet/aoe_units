@@ -1,13 +1,14 @@
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useAppSelector, useAppDispatch } from '../store/hooks'
-import { Container, Paper, Table } from '@mantine/core'
+import { Container, Paper, Table, Button } from '@mantine/core'
 import { getUnitRequest } from '../store/filter/actions'
 import Header from '../components/Header'
 
 
 export default function Unit() {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
+
 
 
   const { unitId } = useParams<{ unitId: string }>()
@@ -30,7 +31,7 @@ export default function Unit() {
     return (
 
       <Container
-        size={"xl"}
+        size="xl"
       >
         <Header pageTitle="Unit Detail" />
         <Paper
@@ -49,7 +50,9 @@ export default function Unit() {
             </thead>
             <tbody>
               {unitArray.map((item) => (
-                <tr>
+                <tr key={
+                  item[0]
+                }>
                   <td><p>{(item[0]).toUpperCase().split("_").join(" ")}</p></td>
                   <td><p>{(JSON.stringify(item[1])).replace(/["{}[\]]/g, "")}</p></td>
                 </tr>

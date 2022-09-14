@@ -12,6 +12,7 @@ describe("Header", () => {
                 {children}
             </BrowserRouter>
         )});
+        
     expect(screen.getByText("Test Title")).toBeInTheDocument();
     //link with href="/" and text "Home"
     expect(screen.getByRole("link", { name: "Home" })).toHaveAttribute("href", "/");

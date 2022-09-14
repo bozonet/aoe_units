@@ -1,7 +1,7 @@
 import { all, call, put, takeLatest } from "redux-saga/effects";
 
 import store from "../store";
-import { fetchTodoFailure, getUnitSuccess, fetchAllUnitsSuccess } from "./actions";
+import { fetchFailure, getUnitSuccess, fetchAllUnitsSuccess } from "./actions";
 import { FETCH_ALL_UNITS_REQUEST, FILTER_BY_FILTERS_REQUEST, FILTER_BY_FILTERS_SUCCESS, GET_UNIT_REQUEST} from "./actionTypes";
 import { FilterByFiltersRequest, GetUnitRequest, GetUnitRequestPayload, Unit } from "./types";
 
@@ -55,7 +55,7 @@ function* getUnitSaga(action: GetUnitRequest) {
     }
     catch (e: any) {
         //TODO add error handling
-        yield put(fetchTodoFailure(
+        yield put(fetchFailure(
             {
                 error: e.message,
             }
@@ -75,7 +75,7 @@ function* fetchAllUnitsSaga() {
     } catch (e: any) {
         yield put(
             //TODO add error handling
-            fetchTodoFailure({
+            fetchFailure({
                 error: e.message,
             })
         );
