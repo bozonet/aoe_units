@@ -1,0 +1,28 @@
+
+    @import './variables.scss';
+
+//reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//typography
+h1 {
+  font-size: 2rem;
+  color: $color-primary;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: $color-secondary;
+    margin: 1rem 0;
+}
+
+body {
+    font-family: $font-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
