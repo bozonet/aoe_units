@@ -15,3 +15,11 @@ https://ocb-aoe-units.netlify.com/
 
 # Styling Library
 - Mantine UI (https://mantine.dev/)
+
+# Start Development
+- Clone the repo
+- Run `npm install`
+- Run `npm start`
+
+
+
