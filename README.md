@@ -2,7 +2,6 @@
 Filtering units by age and cost.
 
 # Demo
-// TODO add demo link
 https://ocb-aoe-units.netlify.com/
 
 # Main Packages 
@@ -20,6 +19,3 @@ https://ocb-aoe-units.netlify.com/
 - Clone the repo
 - Run `npm install`
 - Run `npm start`
-
-
-
