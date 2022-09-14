@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useAppSelector, useAppDispatch } from '../store/hooks'
-import { Container, Paper, Table, Button } from '@mantine/core'
+import { Container, Paper, Table } from '@mantine/core'
 import { getUnitRequest } from '../store/filter/actions'
 import Header from '../components/Header'
 
